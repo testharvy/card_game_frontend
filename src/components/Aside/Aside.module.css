@@ -1,0 +1,28 @@
+.menu{
+  position: fixed;
+  top: 0;
+  left: 0;
+  height: 100vh;
+  width: 180px;
+  padding: 0 10px;
+  background: #0562ad;
+  color: #f7f7f7;
+  box-sizing: border-box;
+  /*border-right: 1px solid black;*/
+
+}
+
+
+.links{
+
+}
+.links a{
+  text-decoration: none;
+  color: #f7f7f7;
+}
+.links a.active{
+  color: #61dafb;
+}
+.links a.pending{
+
+}

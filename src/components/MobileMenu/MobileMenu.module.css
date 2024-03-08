@@ -1,0 +1,84 @@
+.menu{
+    position: fixed;
+    top: 0;
+    left: 0;
+    height: 100px;
+    width: 100vw;
+    padding: 0 10px;
+    background: #0562ad;
+    color: #f7f7f7;
+    box-sizing: border-box;
+    z-index: 100;
+}
+.user{
+    width: 280px;
+}
+.burgerWrapper{
+    position: absolute;
+    /*100/2 - 30/2*/
+    top: 35px;
+    right: 30px;
+    width: 30px;
+    padding: 13px 0;
+    height: 4px;
+}
+.burger,
+.burger::before,
+.burger::after {
+    display: block;
+    background-color: #fff;
+    position: absolute;
+    height: 4px;
+    width: 30px;
+    transition: all 0.3s ease;
+}
+
+.burger::before {
+    content: '';
+    transform: translate(0, -10px);
+    /*margin-top: -10px;*/
+}
+
+.burger::after {
+    content: '';
+    transform: translate(0, 10px);
+}
+.burger.open{
+    background: rgba(255,255,255, 0);
+}
+
+.burger.open::before{
+    transform: translate(0, 0px) rotate(45deg);
+}
+.burger.open::after{
+    transform: translate(0, 0px) rotate(-45deg);
+}
+
+.links{
+
+}
+.links a{
+    text-decoration: none;
+    color: #f7f7f7;
+}
+.links a.active{
+    color: #61dafb;
+}
+.links a.pending{
+
+}
+
+.body{
+    position: fixed;
+    top: 100px;
+    left: 0;
+    right: 0;
+    height: calc(100vh - 100px);
+    max-height: 0;
+    transition: max-height 0.3s ease;
+    background: black;
+    overflow: hidden;
+}
+.body.open{
+    max-height: calc(100vh - 100px);
+}

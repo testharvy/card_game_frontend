@@ -1,0 +1,50 @@
+
+.header{
+    display: flex;
+    justify-content: space-between;
+}
+
+.cards{
+    width: calc(100% - 40px);
+    padding: 20px;
+    border: 1px solid black;
+    border-radius: 20px;
+    color: black;
+}
+.h1{
+    color: white;
+}
+.title{
+    padding: 10px;
+    display: inline-block;
+}
+.tools{
+    border: 1px solid black;
+}
+.list{
+    padding: 10px;
+    border: 1px solid black;
+    display: flex;
+    flex-flow: row wrap;
+    align-content: space-between;
+    justify-content: flex-start;
+
+}
+.sort{
+    display: inline-block;
+    color: #fff;
+    padding: 10px;
+    /*width: 200px;*/
+}
+
+@media screen and (max-width: 759px){
+    .cards{
+        width: calc(100% - 20px);
+        padding: 10px;
+        border-radius: 10px;
+    }
+    .h1{
+        color: white;
+        font-size: 20px;
+    }
+}

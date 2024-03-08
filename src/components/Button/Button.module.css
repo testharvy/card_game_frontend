@@ -1,0 +1,26 @@
+.wrapper{
+    display: inline-block;
+}
+.button{
+    background: white;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    box-sizing: border-box;
+    border: 1px solid #3992ff;
+    color: black;
+}
+.button:hover{
+    background: #3992ff;
+    color: white;
+    border-color: black;
+}
+.button:active{
+    border-style: inset;
+}
+
+@media screen and (max-width: 759px){
+    .button{
+        padding: 5px;
+    }
+}
