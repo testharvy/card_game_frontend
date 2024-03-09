@@ -4,7 +4,7 @@ import styles from './Roulette.module.css'
 import Button from "../Button/Button.js";
 import {fetchBuyCard} from "../../store/actions/card.ts";
 import {useTypedDispatch} from "../../hooks/typeHooks.ts";
-import {CardProps} from "../../types/card.ts";
+import {CardProps, CardType} from "../../types/card.ts";
 import Card from "../Card/Card.tsx";
 
 export default function Roulette() {
@@ -18,11 +18,13 @@ export default function Roulette() {
         if(disabledButton){return}
         //получаем результат сразу, но показываем после вращения
         dispatch(fetchBuyCard()).then(
-            (res) =>
+            (res:CardType) =>
             {
                 const optionsCount = 3;
                 const sectorAngle = 360/optionsCount;
-                const rand = res.type;
+                // const rand = 2;
+                // console.log(res);
+                const rand = res.suit;
                 setDeck([...deck, res]);
                 const randDeg = (rand-1)*sectorAngle;
                 setTransition(true);

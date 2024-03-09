@@ -34,11 +34,9 @@ export default function Aside() {
             </nav>
             { token!='' &&
                 <>
-                    <div>token:</div>
-                    <div style={{overflow: 'auto'}}>{token}</div>
-                    <div>name:</div>
+                    <div>Имя:</div>
                     <div>{name}</div>
-                    <div>coins:</div>
+                    <div>Монеты:</div>
                     <div>{coins}</div>
                     <Button onClick={()=>dispatch(freeCoins())} >freeCoins</Button>
                     <Button onClick={()=>dispatch(changeError('test'))} >test error</Button>
