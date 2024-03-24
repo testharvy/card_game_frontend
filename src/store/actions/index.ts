@@ -1,7 +1,7 @@
 import {RootState} from "../index.ts";
 
-export const API_URL:string = 'http://127.0.0.1:8000/api/'
-export const UPLOAD_URL:string = 'http://127.0.0.1:8000'
+export const API_URL:string = 'https://testharvy.pythonanywhere.com/api/'
+export const UPLOAD_URL:string = 'https://testharvy.pythonanywhere.com/'
 
 export function getConfig(getState:() => RootState){
 
