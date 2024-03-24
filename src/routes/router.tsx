@@ -1,5 +1,5 @@
 import {
-  createBrowserRouter,
+  createHashRouter,
 } from "react-router-dom";
 import CardPage from './cardPage.tsx'
 import IndexPage from "./indexPage.tsx";
@@ -9,7 +9,7 @@ import Root from "./root.tsx";
 import LoginPage, { action as loginAction } from "./loginPage";
 import {loader as logoutLoader } from "./logoutPage.tsx";
 
-export const router = createBrowserRouter([
+export const router = createHashRouter([
     {
         path: "/",
         element: <Root />,
