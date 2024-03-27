@@ -9,15 +9,26 @@
     color: #f7f7f7;
     box-sizing: border-box;
     z-index: 100;
+    transition: color 0.3s ease, background 0.3s ease;
 }
 .user{
     width: 280px;
 }
-.burgerWrapper{
+.controls{
     position: absolute;
-    /*100/2 - 30/2*/
     top: 35px;
     right: 30px;
+    display: flex;
+    justify-content: space-between;
+    width: 100px;
+}
+.switcherWrapper{
+    width: 60px;
+}
+.burgerWrapper{
+
+    /*100/2 - 30/2*/
+
     width: 30px;
     padding: 13px 0;
     height: 4px;
@@ -81,4 +92,28 @@
 }
 .body.open{
     max-height: calc(100vh - 100px);
+}
+
+/* theme */
+.menu.lightTheme{
+    background: #61dafb;
+    color: #1a1a1a;
+}
+
+.menu.lightTheme .burger,
+.menu.lightTheme .burger::before,
+.menu.lightTheme .burger::after {
+    background-color: #1a1a1a;
+}
+
+.links a{
+    color: #1a1a1a;
+}
+.links a.active{
+    color: #ed1c24;
+}
+
+
+.body{
+    background: #f7f7f7;
 }
