@@ -8,21 +8,49 @@
   background: #0562ad;
   color: #f7f7f7;
   box-sizing: border-box;
-  /*border-right: 1px solid black;*/
-
+  transition: background 0.3s ease, color 0.3s ease;
 }
-
-
-.links{
-
+.switcherWrapper{
+  width: 100%;
+  text-align: center;
 }
 .links a{
   text-decoration: none;
   color: #f7f7f7;
+  transition: color 0.3s ease;
 }
-.links a.active{
+.links a.active,
+.links a.active:hover{
   color: #61dafb;
 }
-.links a.pending{
+.links a:hover{
+  color: #ddd;
+}
 
+
+
+
+/* theme */
+.menu.lightTheme{
+  background: #61dafb;
+  color: #1a1a1a;
+}
+.links.lightTheme a{
+  color: #1a1a1a;
+}
+.links.lightTheme a:hover{
+  color: #444;
+}
+.links.lightTheme a.active,
+.links.lightTheme a.active:hover{
+  color: #ed1c24;
+}
+
+.logo path,
+.logo circle{
+  transition: fill 0.3s ease;
+}
+.logo.lightTheme path,
+.logo.lightTheme circle{
+  fill: #ed1c24 !important;
 }

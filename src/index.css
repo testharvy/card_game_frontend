@@ -77,6 +77,11 @@ button:focus-visible {
   color: #fff;
   width: calc(100vw - 300px);
   min-height: calc(100vh - 100px);
+  transition: background 0.3s ease, color 0.3s ease;
+}
+.content.lightTheme{
+  background: #ddd;
+  color: #1a1a1a;
 }
 
 .my-node{

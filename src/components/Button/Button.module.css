@@ -8,12 +8,13 @@
     transition: all 0.3s ease;
     box-sizing: border-box;
     border: 1px solid #3992ff;
-    color: black;
+    color: #1a1a1a;
 }
+
 .button:hover{
     background: #3992ff;
-    color: white;
-    border-color: black;
+    color: #fff;
+    border-color: #1a1a1a;
 }
 .button:active{
     border-style: inset;
@@ -23,4 +24,15 @@
     .button{
         padding: 5px;
     }
+}
+
+.button.lightTheme{
+    background: white;
+    border: 1px solid #3992ff;
+    color: #1a1a1a;
+}
+.button.lightTheme:hover{
+    background: #3992ff;
+    color: #fff;
+    border-color: #1a1a1a;
 }

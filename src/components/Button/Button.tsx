@@ -1,5 +1,6 @@
 import styles from './Button.module.css'
-import {ReactNode} from "react";
+import {ReactNode, useContext} from "react";
+import {ThemeContext} from "../../routes/root.tsx";
 
 type ButtonProps = {
     onClick?: React.MouseEventHandler<HTMLButtonElement>,
@@ -7,9 +8,11 @@ type ButtonProps = {
 }
 //
 export default function Button({onClick,children}:ButtonProps ){
+    const {theme} = useContext(ThemeContext);
+
     return(
         <div className={styles.wrapper}>
-            <button className={styles.button} onClick={onClick}>{children}</button>
+            <button className={`${styles.button} ${styles[theme]}`} onClick={onClick}>{children}</button>
         </div>
 
     )

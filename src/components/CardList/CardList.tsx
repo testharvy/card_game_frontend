@@ -10,6 +10,8 @@ import {
     TransitionGroup,
 } from 'react-transition-group';
 import Checkbox from "../Checkbox/Checkbox.tsx";
+import {useContext} from "react";
+import {ThemeContext} from "../../routes/root.tsx";
 
 const enum SORTING{
     'noSort'= 'noSort',
@@ -42,8 +44,8 @@ function CardList() {
     const myCards:CardState = useTypedSelector(state => state.cards);
     const [chosenCards, setChosenCards] = useState<number[]>([]);
     const [sorting, setSorting] = useState<string>(SORTING.noSort);
-
     const [testR, setTestR] = useState(false);
+    const {theme} = useContext(ThemeContext);
 
     function handleClick(i:number) {
         const array = [...chosenCards];
@@ -84,7 +86,7 @@ function CardList() {
             const result:CardProps[] = [];
             myCards.forEach((el) => {
                 const chosen = chosenCards.indexOf(el.id)!=-1;
-                const card:CardProps = {id:el.id,  title:el.title, card_id: el.card_id, suit: el.suit, lvl: el.lvl, img:el.img, chosen:chosen, onClick: (()=>handleClick(el.id))};
+                const card:CardProps = {...el, chosen:chosen, onClick: (()=>handleClick(el.id))}
                 result.push(card);
             });
 
@@ -108,7 +110,8 @@ function CardList() {
             myCards.forEach((el) => {
                 const chosen = chosenCards.indexOf(el.id)!=-1;
                 if(chosen){
-                    result.push(el);
+                    const card:CardProps = {...el,  onClick: (()=>handleClick(el.id))}
+                    result.push(card);
                 }
             });
             return result;
@@ -119,7 +122,7 @@ function CardList() {
     // console.log('render CardList');
 
     return (
-        <div className={styles.cards}>
+        <div className={`${styles.cards} ${styles[theme]}`}>
             <div  className={styles.header}>
                 <h1 className={styles.h1}>Мои карты</h1>
                 <div style={{color:'red', cursor: 'pointer'}} onClick={()=>setTestR(!testR)}>Тестовый параметр: {testR? 'true' : 'false'}</div>
