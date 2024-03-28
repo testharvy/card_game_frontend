@@ -1,19 +1,16 @@
 import styles from './Aside.module.css'
 import { NavLink } from "react-router-dom";
-import Button from "../Button/Button.tsx";
-import { useTypedSelector, useTypedDispatch } from '../../hooks/typeHooks.ts'
-import {freeCoins} from "../../store/actions/user.ts";
+import { useTypedSelector } from '../../hooks/typeHooks.ts'
 import {LINKS_FOR_AUTH, LINKS_FOR_NOT_AUTH} from "../CardList/CardList.tsx";
 import ThemeSwitcher from "../ThemeSwitcher/ThemeSwitcher.tsx";
 import {useContext} from "react";
 import {ThemeContext} from "../../routes/root.tsx";
+import UserBlock from "../UserBlock/UserBlock.tsx";
 
 
 export default function Aside() {
     const token = useTypedSelector(state => state.token );
-    const {name, coins} = useTypedSelector(state => state.user );
     const LINKS = (token!='') ? LINKS_FOR_AUTH : LINKS_FOR_NOT_AUTH;
-    const dispatch = useTypedDispatch();
     const {theme} = useContext(ThemeContext);
 
     return(
@@ -31,15 +28,7 @@ export default function Aside() {
                     ))}
                 </ul>
             </nav>
-            { token!='' &&
-                <>
-                    <div>Имя:</div>
-                    <div>{name}</div>
-                    <div>Монеты:</div>
-                    <div>{coins}</div>
-                    <Button onClick={()=>dispatch(freeCoins())} >freeCoins</Button>
-                </>
-            }
+            <UserBlock></UserBlock>
         </aside>
     )
 }

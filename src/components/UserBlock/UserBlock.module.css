@@ -1,0 +1,41 @@
+.wrapper{
+    width: 280px;
+}
+.row{
+    line-height: 20px;
+}
+
+.icon{
+    width: 20px;
+    height: 20px;
+    margin-right: 5px;
+    display: inline-block;
+    vertical-align: middle;
+    color: #fff;
+    transition: color 0.3s ease;
+}
+.icon circle,
+.icon path{
+    fill: #fff;
+    transition: fill 0.3s ease;
+}
+.data{
+    margin-bottom: 20px;
+}
+
+@media screen and (max-width: 759px){
+    .data{
+        margin-bottom: 10px;
+    }
+}
+
+/*theme*/
+.icon.lightTheme{
+    color: #1a1a1a;
+}
+
+.icon.lightTheme circle,
+.icon.lightTheme path{
+
+    fill:#1a1a1a;
+}
