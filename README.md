@@ -1,4 +1,11 @@
 # card_game_frontend
-# React + TypeScript + Vite
 
-Фронтенд пет-проекта "коллекционная карточная игра"
+
+### Фронтенд "коллекционная карточная игра"
+- react
+- typescript
+- react-dom-router
+- redux
+- vite
+
+https://testharvy.github.io/card_game_frontend/
