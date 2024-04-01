@@ -10,9 +10,11 @@
     box-sizing: border-box;
     z-index: 100;
     transition: color 0.3s ease, background 0.3s ease;
+    display: flex;
+    align-items: center;
 }
-.user{
-    width: 280px;
+.header{
+
 }
 .controls{
     position: absolute;
