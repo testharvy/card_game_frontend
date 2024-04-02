@@ -1,3 +1,6 @@
+@value colors: "../../colors.css";
+@value colorBlue, colorWhite from colors;
+
 .bg{
     background: rgba(0,0,0,0.5);
     position: fixed;
@@ -17,7 +20,7 @@
     margin: auto;
     padding: 20px;
     border-radius: 5px;
-    background: white;
+    background: colorWhite;
 }
 
 .bg {
@@ -76,6 +79,6 @@
     left: 0;
     width: 100px;
     height: 100px;
-    background: #00a2e8;
+    background: colorBlue;
     z-index: 100;
 }

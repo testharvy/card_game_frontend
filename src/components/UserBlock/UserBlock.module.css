@@ -1,3 +1,6 @@
+@value colors: "../../colors.css";
+@value colorBlack, colorWhite from colors;
+
 .wrapper{
     width: 280px;
 }
@@ -11,12 +14,12 @@
     margin-right: 5px;
     display: inline-block;
     vertical-align: middle;
-    color: #fff;
+    color: colorWhite;
     transition: color 0.3s ease;
 }
 .icon circle,
 .icon path{
-    fill: #fff;
+    fill: colorWhite;
     transition: fill 0.3s ease;
 }
 .data{
@@ -31,11 +34,11 @@
 
 /*theme*/
 .icon.lightTheme{
-    color: #1a1a1a;
+    color: colorBlack;
 }
 
 .icon.lightTheme circle,
 .icon.lightTheme path{
 
-    fill:#1a1a1a;
+    fill: colorBlack;
 }

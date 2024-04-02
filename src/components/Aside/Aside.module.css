@@ -1,3 +1,6 @@
+@value colors: "../../colors.css";
+@value colorDarkBlue, colorBlue, colorRed, colorBlack, colorWhite, colorSilver, colorDarkSilver  from colors;
+
 .menu{
   position: fixed;
   top: 0;
@@ -5,8 +8,8 @@
   height: 100vh;
   width: 180px;
   padding: 0 10px;
-  background: #0562ad;
-  color: #f7f7f7;
+  background: colorDarkBlue;
+  color: colorWhite;
   box-sizing: border-box;
   transition: background 0.3s ease, color 0.3s ease;
 }
@@ -16,34 +19,32 @@
 }
 .links a{
   text-decoration: none;
-  color: #f7f7f7;
+  color: colorWhite;
   transition: color 0.3s ease;
 }
 .links a.active,
 .links a.active:hover{
-  color: #61dafb;
+  color: colorBlue;
 }
 .links a:hover{
-  color: #ddd;
+  color: colorSilver;
 }
-
-
 
 
 /* theme */
 .menu.lightTheme{
-  background: #61dafb;
-  color: #1a1a1a;
+  background: colorBlue;
+  color: colorBlack;
 }
 .links.lightTheme a{
-  color: #1a1a1a;
+  color: colorBlack;
 }
 .links.lightTheme a:hover{
-  color: #444;
+  color: colorDarkSilver;
 }
 .links.lightTheme a.active,
 .links.lightTheme a.active:hover{
-  color: #ed1c24;
+  color: colorRed;
 }
 
 .logo path,
@@ -52,5 +53,5 @@
 }
 .logo.lightTheme path,
 .logo.lightTheme circle{
-  fill: #ed1c24 !important;
+  fill: colorRed !important;
 }
