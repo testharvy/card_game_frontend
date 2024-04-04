@@ -1,20 +1,23 @@
+@value colors: "../../colors.css";
+@value colorBlueHover, colorBlack, colorWhite from colors;
+
 .wrapper{
     display: inline-block;
 }
 .button{
-    background: white;
+    background: colorWhite;
     border-radius: 5px;
     cursor: pointer;
     transition: all 0.3s ease;
     box-sizing: border-box;
-    border: 1px solid #3992ff;
-    color: #1a1a1a;
+    border: 1px solid colorBlueHover;
+    color: colorBlack;
 }
 
 .button:hover{
-    background: #3992ff;
-    color: #fff;
-    border-color: #1a1a1a;
+    background: colorBlueHover;
+    color: colorWhite;
+    border-color: colorBlack;
 }
 .button:active{
     border-style: inset;
@@ -27,12 +30,12 @@
 }
 
 .button.lightTheme{
-    background: white;
-    border: 1px solid #3992ff;
-    color: #1a1a1a;
+    background: colorWhite;
+    border: 1px solid colorBlueHover;
+    color: colorBlack;
 }
 .button.lightTheme:hover{
-    background: #3992ff;
-    color: #fff;
-    border-color: #1a1a1a;
+    background: colorBlueHover;
+    color: colorWhite;
+    border-color: colorBlack;
 }

@@ -1,6 +1,9 @@
+@value colors: "../../colors.css";
+@value colorBlack, colorWhite, colorDarkSilver, cardGreen, cardRed, cardBlue from colors;
+
 .container{
     border-radius: 5px;
-    border: 1px solid black;
+    border: 1px solid colorBlack;
     display: flex;
 
 }
@@ -8,13 +11,13 @@
     display: block;
     position: relative;
     border-radius: 5px;
-    border: 1px solid black;
+    border: 1px solid colorBlack;
     padding-top: 25px;
 }
 .arrow{
     width: 30px;
     height: 30px;
-    border: solid red;
+    border: solid cardRed;
     border-width: 0 5px 5px 0;
     box-sizing: border-box;
     position: absolute;
@@ -28,9 +31,9 @@
     border-radius: 50%;
     width: 500px;
     height: 500px;
-    border: 10px solid silver;
+    border: 10px solid colorWhite;
     /*box-sizing: border-box;*/
-    background-color: #f7f7f7;
+    background-color: colorWhite;
     position: relative;
     overflow: hidden;
     transform: rotate(0deg);
@@ -41,8 +44,8 @@
     content: '';
     width: 100px;
     height: 100px;
-    background: #282c34;
-    border: 10px solid silver;
+    background: colorDarkSilver;
+    border: 10px solid colorWhite;
     box-sizing: border-box;
     border-radius: 50%;
     position: absolute;
@@ -66,27 +69,27 @@
     justify-content: center;
 }
 .item:nth-child(1){
-    background:#22b14c;
+    background:cardGreen;
     transform: rotate(0deg);
 }
 .item:nth-child(2){
-    background: #ed1c24;
+    background: cardRed;
     transform: rotate(-60deg);
 }
 .item:nth-child(3){
-    background: #00a2e8;
+    background: cardBlue;
     transform: rotate(-120deg);
 }
 .item:nth-child(4){
-    background:#22b14c;
+    background: cardGreen;
     transform: rotate(-180deg);
 }
 .item:nth-child(5){
-    background: #ed1c24;
+    background: cardRed;
     transform: rotate(-240deg);
 }
 .item:nth-child(6){
-    background: #00a2e8;
+    background: cardBlue;
     transform: rotate(-300deg);
 }
 

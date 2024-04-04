@@ -12,6 +12,7 @@ function IndexPage() {
               <li>typescript</li>
               <li>react-dom-router</li>
               <li>redux</li>
+              <li>redux-thunk</li>
               <li>vite</li>
               <li>адаптив</li>
               <li>анимации</li>

@@ -1,9 +1,12 @@
+@value colors: "../../colors.css";
+@value colorBlack, colorWhite  from colors;
+
 .cardWrapper{
     margin: 8px;
     list-style-type: none;
     transition: opacity 2s ease;
     opacity: 1;
-    color: black;
+    color: colorBlack;
 }
 .isShowBox{
     opacity: 0.5;
@@ -31,7 +34,7 @@
 .front{
     z-index: 1;
     position: relative;
-    background-color: #fff;
+    background-color: colorWhite;
     height: 100%;
     text-align: center;
     backface-visibility: hidden;
@@ -87,7 +90,7 @@
 }
 .title{
     font-weight: bold;
-    border-bottom: 1px solid black;
+    border-bottom: 1px solid colorBlack;
     padding-bottom: 5px;
 }
 .img{
