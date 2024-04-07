@@ -1,13 +1,13 @@
 import styles from "./ErrorPopup.module.css"
 import {useTypedSelector, useTypedDispatch} from "../../hooks/typeHooks.ts";
-import {changeError} from "../../store/actions/error.ts"
+import {changeError} from "../../store/reducers/ErrorSlice.ts"
 import {
     CSSTransition,
 } from 'react-transition-group';
 import {useEffect, useRef, useState} from "react";
 
 export default function ErrorPopup(){
-    const error = useTypedSelector(state => state.error);
+    const error = useTypedSelector(state => state.error.text);
     const [showPopup, setShowPopup] = useState(false);
 
     useEffect(() => {

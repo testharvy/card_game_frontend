@@ -1,14 +1,12 @@
 import { combineReducers } from 'redux';
-import {tokenReducer} from './tokenReducer.ts'
-import {userReducer} from './userReducer.ts'
-import {errorReducer} from "./errorReducer.ts";
-import {cardReducer} from "./cardReducer.ts";
+import errorSlice from "./ErrorSlice.ts";
+import userSlice from "./UserSlice.ts";
+import cardSlice from "./CardSlice.ts";
 
 const rootReducer = combineReducers({
-    token: tokenReducer,
-    user: userReducer,
-    error: errorReducer,
-    cards: cardReducer,
+    user: userSlice,
+    error: errorSlice,
+    cards: cardSlice,
 })
 
 export default rootReducer;

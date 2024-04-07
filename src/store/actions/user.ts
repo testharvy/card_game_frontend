@@ -1,60 +1,64 @@
-
-import {UserAction, UserActionsTypes} from "../../types/user.ts";
-import {Dispatch} from "redux";
+import {AppDispatch, RootState} from "../index.ts";
 import axios from "axios";
-import {API_URL} from "./index.ts";
-import {RootState} from "../index.ts";
-import {CardAction} from "../../types/card.ts";
-import {setCards} from "./card.ts";
+import {API_URL, getConfig} from "./index.ts";
+import {setCards} from "../reducers/CardSlice.ts";
 import {dispatchErrorHelper} from "./helpers.ts";
+import {CardType} from "../../types/card.ts";
+import {setUserFetchingStatus, changeCoins, changeNickname, setToken} from "../reducers/UserSlice.ts";
 
-export function changeNickname(name:string):UserAction {
-    return { type: UserActionsTypes.CHANGE_NICKNAME, name };
-}
-export function changeCoins(value:number):UserAction {
-    return { type: UserActionsTypes.CHANGE_COINS, value };
-}
 
-export function clearUser():UserAction {
-    return { type: UserActionsTypes.CLEAR_USER};
+export interface userFetchData{
+    nickname: string;
+    coins: number;
+    cards: CardType[];
 }
 
 export function fetchUser() {
-    return async (dispatch:Dispatch<UserAction|CardAction>, getState: () => RootState) => {
+    return async (dispatch:AppDispatch, getState: () => RootState) => {
         try {
-            const token = getState().token;
-            const config = {
-                headers: {
-                    'Content-Type': 'application/json;charset=utf-8',
-                    'Authorization': 'Token '+token,
-                }
-            }
-            const response = await axios.get(API_URL + 'me/', config).catch();
+            dispatch(setUserFetchingStatus(false));
+            const config = getConfig(getState);
+            const response = await axios.get<userFetchData>(API_URL + 'me/', config).catch();
             dispatch(changeNickname(response.data.nickname));
             dispatch(changeCoins(response.data.coins));
             dispatch(setCards(response.data.cards));
+            dispatch(setUserFetchingStatus(true));
         }catch (err){
             dispatchErrorHelper(err, dispatch);
         }
     }
+}
+
+export interface freeCoinsData{
+    msg: string;
+    coins: number;
 }
 
 export function freeCoins() {
-    return async (dispatch:Dispatch<UserAction>, getState: () => RootState) => {
+    return async (dispatch:AppDispatch, getState: () => RootState) => {
         try {
-            const token = getState().token;
-            const config = {
-                headers: {
-                    'Content-Type': 'application/json;charset=utf-8',
-                    'Authorization': 'Token '+token,
-                }
-            }
-            const response = await axios.post(API_URL + 'free-coins/',{} , config).catch();
-            dispatch({type: UserActionsTypes.CHANGE_COINS, value:response.data.coins});
+            const config = getConfig(getState);
+            const response = await axios.post<freeCoinsData>(API_URL + 'free-coins/',{} , config).catch();
+            dispatch(changeCoins(response.data.coins));
         }catch (err){
             dispatchErrorHelper(err, dispatch);
         }
     }
 }
 
+export interface fetchTokenData{
+    token: string;
+}
 
+export function fetchToken(formData:FormData) {
+    return async (dispatch:AppDispatch) => {
+        try {
+            const response = await axios.post<fetchTokenData>(API_URL + 'api-token-auth/', formData);
+            const newToken:string = response.data.token;
+            localStorage.setItem('token', newToken);
+            dispatch(setToken(newToken))
+        }catch (err){
+            dispatchErrorHelper(err, dispatch);
+        }
+    }
+}

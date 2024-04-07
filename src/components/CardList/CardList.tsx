@@ -41,7 +41,7 @@ export const LINKS_FOR_AUTH:LINK[] = [
 
 function CardList() {
     const dispatch = useTypedDispatch();
-    const myCards:CardState = useTypedSelector(state => state.cards);
+    const myCards:CardState = useTypedSelector(state => state.cards.cards);
     const [chosenCards, setChosenCards] = useState<number[]>([]);
     const [sorting, setSorting] = useState<string>(SORTING.noSort);
     const [testR, setTestR] = useState(false);
@@ -149,7 +149,7 @@ function CardList() {
                             unmountOnExit
                         >
                             <div className={'my-node'} ref={nodeRef}>
-                                <Card  key={el.id} id={el.id} suit={el.suit} title={el.title} chosen={chosen} lvl={el.lvl} img={el.img} onClick={el.onClick}></Card>
+                                <Card id={el.id} suit={el.suit} title={el.title} chosen={chosen} lvl={el.lvl} img={el.img} onClick={el.onClick}></Card>
                             </div>
 
                         </CSSTransition>

@@ -8,9 +8,10 @@ import ErrorPopup from "../components/ErrorPopup/ErrorPopup.tsx";
 import {useTypedDispatch, useTypedSelector} from "../hooks/typeHooks.ts";
 import {useEffect, useState} from "react";
 import {fetchUser} from "../store/actions/user.ts";
-import {changeToken} from "../store/actions/token.ts";
+import {setToken} from "../store/reducers/UserSlice.ts";
 import { useMediaQuery } from 'react-responsive';
 import { createContext } from 'react';
+
 
 interface ContextValue {
     theme: string;
@@ -24,14 +25,14 @@ export const ThemeContext = createContext<ContextValue >({theme:'darkTheme', set
 export default function Root() {
     const isMobile = useMediaQuery({ query: '(max-width: 768px)' });
     const navigation = useNavigation();
-    const token = useTypedSelector(state=>state.token);
+    const token = useTypedSelector(state=>state.user.token);
     const [theme, setTheme] = useState<string>('darkTheme');
     const dispatch = useTypedDispatch();
 
     useEffect(()=>{
         const savedToken = localStorage.getItem("token");
         if(savedToken){
-            dispatch(changeToken(savedToken));
+            dispatch(setToken(savedToken));
         }
 
     }, [])
@@ -44,7 +45,7 @@ export default function Root() {
 
   return (
     <ThemeContext.Provider value={{theme, setTheme}}>
-        {isMobile?  <MobileMenu></MobileMenu> : <Aside></Aside>}
+        {isMobile?  <MobileMenu/> : <Aside/>}
         <div id="detail" className={navigation.state === "loading" ? `content loading ${theme}` : `content ${theme}`}>
             <Outlet />
         </div>

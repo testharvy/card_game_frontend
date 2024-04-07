@@ -7,7 +7,7 @@ import {ThemeContext} from "../../routes/root.tsx";
 
 
 export default function UserBlock(){
-    const token = useTypedSelector(state => state.token );
+    const token = useTypedSelector(state => state.user.token );
     const {name, coins} = useTypedSelector(state => state.user );
     const dispatch = useTypedDispatch();
     const {theme} = useContext(ThemeContext);

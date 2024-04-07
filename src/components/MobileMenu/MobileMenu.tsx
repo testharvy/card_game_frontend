@@ -9,7 +9,7 @@ import UserBlock from "../UserBlock/UserBlock.tsx";
 
 export default function MobileMenu() {
     const [opened, setOpened] = useState(false);
-    const token = useTypedSelector(state => state.token );
+    const token = useTypedSelector(state => state.user.token );
     const LINKS = (token!='') ? LINKS_FOR_AUTH : LINKS_FOR_NOT_AUTH;
     const {theme} = useContext(ThemeContext);
 

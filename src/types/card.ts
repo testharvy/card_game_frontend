@@ -25,24 +25,3 @@ export interface CardProps extends CardType{
 }
 
 export interface CardState extends Array<CardType>{}
-
-interface SetCardsAction{
-    type: CardActionsTypes.SET_CARDS,
-    cards: CardState,
-}
-interface AddCardAction{
-    type: CardActionsTypes.ADD_CARD,
-    card: CardType,
-}
-
-interface RemoveCardAction{
-    type: CardActionsTypes.REMOVE_CARD,
-    cardId: number
-}
-
-interface ClearCardsAction{
-    type: CardActionsTypes.CLEAR_CARDS
-}
-
-
-export type CardAction = SetCardsAction | AddCardAction | RemoveCardAction | ClearCardsAction;
