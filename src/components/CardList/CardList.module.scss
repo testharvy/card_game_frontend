@@ -1,5 +1,4 @@
-@value colors: "../../colors.css";
-@value colorBlack, colorWhite from colors;
+@import "../../variables";
 
 .header{
     display: flex;
@@ -9,13 +8,13 @@
 .cards{
     width: calc(100% - 40px);
     padding: 20px;
-    border: 1px solid colorBlack;
+    border: 1px solid $colorBlack;
     border-radius: 20px;
-    color: colorBlack;
+    color: $colorBlack;
     transition: background 0.3s ease, border 0.3s ease;
 }
 .h1{
-    color: colorWhite;
+    color: $colorWhite;
     transition: color 0.3s ease;
 }
 .title{
@@ -23,12 +22,12 @@
     display: inline-block;
 }
 .tools{
-    border: 1px solid colorBlack;
+    border: 1px solid $colorBlack;
     transition: border 0.3s ease;
 }
 .list{
     padding: 10px;
-    border: 1px solid colorBlack;
+    border: 1px solid $colorBlack;
     display: flex;
     flex-flow: row wrap;
     align-content: space-between;
@@ -38,13 +37,13 @@
 }
 .sort{
     display: inline-block;
-    color: colorWhite;
+    color: $colorWhite;
     padding: 10px;
     /*width: 200px;*/
     transition: color 0.3s ease;
 }
 
-@media screen and (max-width: 759px){
+@media screen and (max-width: $mobileWidth){
     .cards{
         width: calc(100% - 20px);
         padding: 10px;
@@ -58,13 +57,12 @@
 
 /* theme */
 .cards.lightTheme{
-    border: 1px solid colorBlack;
-    color: colorBlack;
+    border: 1px solid $colorBlack;
+    color: $colorBlack;
+    .h1{
+        color: $colorBlack;
+    }
+    .sort{
+        color: $colorBlack;
+    }
 }
-.cards.lightTheme .h1{
-    color: colorBlack;
-}
-.cards.lightTheme .sort{
-    color: colorBlack;
-}
-

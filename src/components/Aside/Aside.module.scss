@@ -1,0 +1,58 @@
+@import "../../variables";
+
+.menu{
+  position: fixed;
+  top: 0;
+  left: 0;
+  height: 100vh;
+  width: 180px;
+  padding: 0 10px;
+  background: $colorDarkBlue;
+  color: $colorWhite;
+  box-sizing: border-box;
+  transition: background 0.3s ease, color 0.3s ease;
+}
+.switcherWrapper{
+  width: 100%;
+  text-align: center;
+}
+.links{
+  a{
+    text-decoration: none;
+    color: $colorWhite;
+    transition: color 0.3s ease;
+  }
+  a.active,
+  a.active:hover{
+    color: $colorBlue;
+  }
+  a:hover{
+    color: $colorSilver;
+  }
+}
+
+
+/* theme */
+.menu.lightTheme{
+  background: $colorBlue;
+  color: $colorBlack;
+  a{
+    color: $colorBlack;
+  }
+  a:hover{
+    color: $colorDarkSilver;
+  }
+  a.active,
+  a.active:hover{
+    color: $colorRed;
+  }
+}
+
+.logo path,
+.logo circle{
+  transition: fill 0.3s ease;
+}
+.logo.lightTheme path,
+.logo.lightTheme circle{
+  fill: $colorRed !important;
+}

@@ -1,4 +1,4 @@
-import styles from './Aside.module.css'
+import styles from './Aside.module.scss'
 import { NavLink } from "react-router-dom";
 import { useTypedSelector } from '../../hooks/typeHooks.ts'
 import {LINKS_FOR_AUTH, LINKS_FOR_NOT_AUTH} from "../CardList/CardList.tsx";

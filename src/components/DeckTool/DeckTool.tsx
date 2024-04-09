@@ -1,5 +1,5 @@
 import Card from "../Card/Card.tsx";
-import styles from "./DeckTool.module.css"
+import styles from "./DeckTool.module.scss"
 import Button from "../Button/Button.js";
 import {CardProps} from "../../types/card.ts";
 import {memo, useContext} from "react";

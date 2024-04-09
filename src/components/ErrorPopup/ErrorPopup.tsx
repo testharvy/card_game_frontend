@@ -1,4 +1,4 @@
-import styles from "./ErrorPopup.module.css"
+import styles from "./ErrorPopup.module.scss"
 import {useTypedSelector, useTypedDispatch} from "../../hooks/typeHooks.ts";
 import {changeError} from "../../store/reducers/ErrorSlice.ts"
 import {

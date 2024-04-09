@@ -1,4 +1,4 @@
-import styles from './Checkbox.module.css'
+import styles from './Checkbox.module.scss'
 import React from "react";
 
 type Props = {

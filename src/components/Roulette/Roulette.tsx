@@ -1,6 +1,6 @@
 import { useState} from "react";
 
-import styles from './Roulette.module.css'
+import styles from './Roulette.module.scss'
 import Button from "../Button/Button.js";
 import {fetchBuyCard} from "../../store/actions/card.ts";
 import {useTypedDispatch} from "../../hooks/typeHooks.ts";

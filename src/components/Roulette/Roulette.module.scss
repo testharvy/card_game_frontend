@@ -1,9 +1,8 @@
-@value colors: "../../colors.css";
-@value colorBlack, colorWhite, colorDarkSilver, cardGreen, cardRed, cardBlue from colors;
+@import "../../variables";
 
 .container{
     border-radius: 5px;
-    border: 1px solid colorBlack;
+    border: 1px solid $colorBlack;
     display: flex;
 
 }
@@ -11,13 +10,13 @@
     display: block;
     position: relative;
     border-radius: 5px;
-    border: 1px solid colorBlack;
+    border: 1px solid $colorBlack;
     padding-top: 25px;
 }
 .arrow{
     width: 30px;
     height: 30px;
-    border: solid cardRed;
+    border: solid $cardRed;
     border-width: 0 5px 5px 0;
     box-sizing: border-box;
     position: absolute;
@@ -31,9 +30,9 @@
     border-radius: 50%;
     width: 500px;
     height: 500px;
-    border: 10px solid colorWhite;
+    border: 10px solid $colorWhite;
     /*box-sizing: border-box;*/
-    background-color: colorWhite;
+    background-color: $colorWhite;
     position: relative;
     overflow: hidden;
     transform: rotate(0deg);
@@ -44,8 +43,8 @@
     content: '';
     width: 100px;
     height: 100px;
-    background: colorDarkSilver;
-    border: 10px solid colorWhite;
+    background: $colorDarkSilver;
+    border: 10px solid $colorWhite;
     box-sizing: border-box;
     border-radius: 50%;
     position: absolute;
@@ -69,27 +68,27 @@
     justify-content: center;
 }
 .item:nth-child(1){
-    background:cardGreen;
+    background: $cardGreen;
     transform: rotate(0deg);
 }
 .item:nth-child(2){
-    background: cardRed;
+    background: $cardRed;
     transform: rotate(-60deg);
 }
 .item:nth-child(3){
-    background: cardBlue;
+    background: $cardBlue;
     transform: rotate(-120deg);
 }
 .item:nth-child(4){
-    background: cardGreen;
+    background: $cardGreen;
     transform: rotate(-180deg);
 }
 .item:nth-child(5){
-    background: cardRed;
+    background: $cardRed;
     transform: rotate(-240deg);
 }
 .item:nth-child(6){
-    background: cardBlue;
+    background: $cardBlue;
     transform: rotate(-300deg);
 }
 

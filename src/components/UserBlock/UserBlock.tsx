@@ -1,4 +1,4 @@
-import styles from "./UserBlock.module.css";
+import styles from "./UserBlock.module.scss";
 import Button from "../Button/Button.tsx";
 import {freeCoins} from "../../store/actions/user.ts";
 import {useTypedDispatch, useTypedSelector} from "../../hooks/typeHooks.ts";

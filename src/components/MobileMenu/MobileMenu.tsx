@@ -1,4 +1,4 @@
-import styles from './MobileMenu.module.css'
+import styles from './MobileMenu.module.scss'
 import { NavLink } from "react-router-dom";
 import { useTypedSelector } from '../../hooks/typeHooks.ts'
 import {useContext, useState} from "react";

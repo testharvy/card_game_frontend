@@ -1,6 +1,6 @@
 import {useContext} from "react";
 import {ThemeContext} from "../../routes/root.js";
-import styles from "./ThemeSwitcher.module.css"
+import styles from "./ThemeSwitcher.module.scss"
 
 export default function ThemeSwitcher(){
     const {theme, setTheme} = useContext(ThemeContext);

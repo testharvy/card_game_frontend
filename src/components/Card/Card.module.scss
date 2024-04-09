@@ -1,12 +1,11 @@
-@value colors: "../../colors.css";
-@value colorBlack, colorWhite  from colors;
+@import "../../variables";
 
 .cardWrapper{
     margin: 8px;
     list-style-type: none;
     transition: opacity 2s ease;
     opacity: 1;
-    color: colorBlack;
+    color: $colorBlack;
 }
 .isShowBox{
     opacity: 0.5;
@@ -34,24 +33,26 @@
 .front{
     z-index: 1;
     position: relative;
-    background-color: colorWhite;
+    background-color: $colorWhite;
     height: 100%;
     text-align: center;
     backface-visibility: hidden;
     transition: transform .3s linear;
     border-radius: 5px;
 }
-.islicable{
+.isClickable{
     cursor: pointer;
 }
 
-.card.isChosen .back {
-    transform: rotateY(0deg);
-    z-index: 2;
-}
-.card.isChosen .front {
-    transform: rotateY(180deg);
-    z-index: -1;
+.card.isChosen{
+    .back {
+        transform: rotateY(0deg);
+        z-index: 2;
+    }
+    .front {
+        transform: rotateY(180deg);
+        z-index: -1;
+    }
 }
 
 .back{
@@ -90,7 +91,7 @@
 }
 .title{
     font-weight: bold;
-    border-bottom: 1px solid colorBlack;
+    border-bottom: 1px solid $colorBlack;
     padding-bottom: 5px;
 }
 .img{
@@ -101,7 +102,7 @@
 }
 
 
-@media screen and (max-width: 759px){
+@media screen and (max-width: $mobileWidth){
     .card{
         width: 80px;
         height: 100px;
@@ -116,7 +117,7 @@
     }
     .lvl{
         position: absolute;
-        bottom: 0px;
+        bottom: 0;
         right: 5px;
     }
 }

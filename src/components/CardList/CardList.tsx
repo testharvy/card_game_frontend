@@ -1,5 +1,5 @@
 import Card from '../Card/Card.tsx';
-import styles from './CardList.module.css';
+import styles from './CardList.module.scss';
 import React, {useState, createRef, useCallback, useMemo} from "react";
 import {CardProps, CardState} from "../../types/card.ts";
 import {useTypedDispatch, useTypedSelector} from "../../hooks/typeHooks.ts";

@@ -1,7 +1,7 @@
 import {
     Form,
 } from "react-router-dom";
-import styles from './LoginForm.module.css'
+import styles from './LoginForm.module.scss'
 
 export default function LoginForm(){
     return(

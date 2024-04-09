@@ -1,4 +1,4 @@
-import styles from './Button.module.css'
+import styles from './Button.module.scss'
 import {ReactNode, useContext} from "react";
 import {ThemeContext} from "../../routes/root.tsx";
 

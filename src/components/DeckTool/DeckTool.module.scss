@@ -1,10 +1,8 @@
-@value colors: "../../colors.css";
-@value colorBlack, colorWhite from colors;
-
+@import "../../variables";
 
 .wrapper{
     background: rgba(0,0,128,0.4);
-    border: 1px solid colorBlack;
+    border: 1px solid $colorBlack;
     position: fixed;
     bottom: 10px;
     right: 10px;
@@ -14,7 +12,7 @@
 }
 .title{
     font-size: 20px;
-    color: colorWhite;
+    color: $colorWhite;
     padding-left: 20px;
     display: inline-block;
     transition: color 0.3s ease;
@@ -34,5 +32,5 @@
     background: rgba(128,128,255,0.4);
 }
 .wrapper.lightTheme .title{
-    color: colorBlack;
+    color: $colorBlack;
 }

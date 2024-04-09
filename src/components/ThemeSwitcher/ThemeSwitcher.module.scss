@@ -1,13 +1,11 @@
-@value colors: "../../colors.css";
-@value colorSilver, colorBlue from colors;
-
+@import "../../variables";
 
 .logos{
     width: 60px;
     height: 30px;
-    background: colorSilver;
+    background: $colorSilver;
     box-sizing: border-box;
-    border: 1px solid colorBlue;
+    border: 1px solid $colorBlue;
     border-radius: 10px;
     display: inline-flex;
     justify-content: space-around;
