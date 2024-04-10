@@ -22,9 +22,10 @@ export function fetchUser() {
             dispatch(changeNickname(response.data.nickname));
             dispatch(changeCoins(response.data.coins));
             dispatch(setCards(response.data.cards));
-            dispatch(setUserFetchingStatus(true));
-        }catch (err){
+        } catch (err) {
             dispatchErrorHelper(err, dispatch);
+        } finally {
+            dispatch(setUserFetchingStatus(true));
         }
     }
 }
@@ -37,11 +38,14 @@ export interface freeCoinsData{
 export function freeCoins() {
     return async (dispatch:AppDispatch, getState: () => RootState) => {
         try {
+            dispatch(setUserFetchingStatus(false));
             const config = getConfig(getState);
             const response = await axios.post<freeCoinsData>(API_URL + 'free-coins/',{} , config).catch();
             dispatch(changeCoins(response.data.coins));
-        }catch (err){
+        } catch (err) {
             dispatchErrorHelper(err, dispatch);
+        } finally {
+            dispatch(setUserFetchingStatus(true));
         }
     }
 }
@@ -53,12 +57,15 @@ export interface fetchTokenData{
 export function fetchToken(formData:FormData) {
     return async (dispatch:AppDispatch) => {
         try {
+            dispatch(setUserFetchingStatus(false));
             const response = await axios.post<fetchTokenData>(API_URL + 'api-token-auth/', formData);
             const newToken:string = response.data.token;
             localStorage.setItem('token', newToken);
             dispatch(setToken(newToken))
-        }catch (err){
+        } catch (err) {
             dispatchErrorHelper(err, dispatch);
+        } finally {
+            dispatch(setUserFetchingStatus(true));
         }
     }
 }
