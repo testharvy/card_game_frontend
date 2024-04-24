@@ -1,0 +1,1 @@
+export {RulesPage} from './ui/page.tsx'
