@@ -33,7 +33,6 @@ export function CardPage() {
     }
 
     const handleCombineClick = useCallback( () => {
-        console.log('handleCombineClick', chosenCards.length);
         if(chosenCards.length==0){
             dispatch(fetchBuyCard());
         }
@@ -83,8 +82,6 @@ export function CardPage() {
         },
         [myCards, chosenCards]
     );
-
-    // console.log('render CardList');
 
     return (
         <div className={`${styles.cards} ${styles[theme]}`}>

@@ -4,14 +4,15 @@ import {ThemeContext} from "@/shared/theme";
 
 interface Props{
     onClick?: React.MouseEventHandler<HTMLButtonElement>,
-    children?: ReactNode ,
+    children?: ReactNode,
+    buttonClass?: 'default'|'width100',
 }
 //
-export function Button({onClick,children}:Props ){
+export function Button({onClick, children, buttonClass='default'}:Props ){
     const {theme} = useContext(ThemeContext);
 
     return(
-        <div className={styles.wrapper}>
+        <div className={`${styles.wrapper} ${styles[buttonClass]}`}>
             <button className={`${styles.button} ${styles[theme]}`} onClick={onClick}>{children}</button>
         </div>
 

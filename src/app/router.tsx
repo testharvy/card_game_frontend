@@ -3,6 +3,7 @@ import {
 } from "react-router-dom";
 import { RootLayout } from "./rootLayout.tsx";
 import { CardPage } from "@/pages/cards"
+import { ShopPage } from "@/pages/shop"
 import { IndexPage } from "@/pages/index";
 import { RulesPage } from "@/pages/rules";
 import { RoulettePage } from "@/pages/roulette";
@@ -33,6 +34,10 @@ export const router = createBrowserRouter([
                     {
                         path: "roulette",
                         element: <RoulettePage />,
+                    },
+                    {
+                        path: "shop",
+                        element: <ShopPage />,
                     },
                     {
                         path: "login",

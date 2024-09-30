@@ -11,6 +11,7 @@
     box-sizing: border-box;
     border: 1px solid $colorBlueHover;
     color: $colorBlack;
+    width: 100%;
 }
 
 .button:hover{
@@ -21,6 +22,14 @@
 .button:active{
     border-style: inset;
 }
+
+.default{
+
+}
+.width100{
+    width: 100%;
+}
+
 
 @media screen and (max-width: $mobileWidth){
     .button{

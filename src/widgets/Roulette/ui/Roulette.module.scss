@@ -3,14 +3,18 @@
 .container{
     border-radius: 5px;
     border: 1px solid $colorBlack;
-    display: flex;
-
+    display: grid;
+    grid-template-columns: 550px auto;
+    padding: 20px;
 }
+.title{
+    display: block;
+}
+
 .wheelWrapper{
     display: block;
     position: relative;
     border-radius: 5px;
-    border: 1px solid $colorBlack;
     padding-top: 25px;
 }
 .arrow{
@@ -66,6 +70,7 @@
     display: flex;
     align-items: center;
     justify-content: center;
+    color: $colorWhite;
 }
 .item:nth-child(1){
     background: $cardGreen;
@@ -92,16 +97,51 @@
     transform: rotate(-300deg);
 }
 
-.side{
-    width: 200px;
+.left{
+    width: 550px;
+}
+.right{
+    padding-top: 34px;
 }
 .button{
     display: block;
 }
 .result{
+    padding-top: 20px;
     display: block;
 }
 .deck{
-    display: block;
-    width: 400px;
+    display: flex;
+    flex-flow: row wrap;
+    align-content: space-between;
+    justify-content: flex-start;
+    width: 100%;
+    padding: 0;
+}
+
+@media screen and (max-width: $mobileWidth){
+    .title{
+        font-size: 20px;
+    }
+    .container{
+        display: block;
+    }
+    .left{
+        width: 100%;
+    }
+    .wheel{
+        width: 200px;
+        height: 200px;
+    }
+    .item{
+        width: 200px;
+        color: transparent;
+    }
+    .arrow{
+        width: 30px;
+        height: 30px;
+        left: 95px;
+        top: 10px;
+    }
+
 }
