@@ -2,7 +2,6 @@ import {AppDispatch, RootState} from "@/app/store.ts";
 import {changeCoins, setUserFetchingStatus} from "@/entities/user";
 import {API_URL, dispatchErrorHelper, getConfig} from "@/shared/utils";
 import axios from "axios";
-import {freeCoinsData} from "@/features/freeCoins";
 import {changeError} from "@/entities/error";
 import {addCard, CardType} from "@/entities/card";
 
