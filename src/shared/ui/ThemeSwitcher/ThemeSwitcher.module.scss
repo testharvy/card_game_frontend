@@ -1,0 +1,26 @@
+@import "@/shared/SCSSVariables";
+
+.logos{
+    width: 60px;
+    height: 30px;
+    background: $colorSilver;
+    box-sizing: border-box;
+    border: 1px solid $colorBlue;
+    border-radius: 10px;
+    display: inline-flex;
+    justify-content: space-around;
+}
+.logos.lightTheme .moon,
+.logos.darkTheme .sun{
+    opacity: 0.5;
+}
+.moon path{
+    width: 30px;
+    height: 30px;
+    fill: #12006d;
+}
+.sun path{
+    width: 30px;
+    height: 30px;
+    fill: #6d5200;
+}

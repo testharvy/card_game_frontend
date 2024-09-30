@@ -1,0 +1,49 @@
+@import "@/shared/SCSSVariables";
+
+.wrapper{
+    display: inline-block;
+}
+.button{
+    background: $colorWhite;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    box-sizing: border-box;
+    border: 1px solid $colorBlueHover;
+    color: $colorBlack;
+    width: 100%;
+}
+
+.button:hover{
+    background: $colorBlueHover;
+    color: $colorWhite;
+    border-color: $colorBlack;
+}
+.button:active{
+    border-style: inset;
+}
+
+.default{
+
+}
+.width100{
+    width: 100%;
+}
+
+
+@media screen and (max-width: $mobileWidth){
+    .button{
+        padding: 5px;
+    }
+}
+
+.button.lightTheme{
+    background: $colorWhite;
+    border: 1px solid $colorBlueHover;
+    color: $colorBlack;
+}
+.button.lightTheme:hover{
+    background: $colorBlueHover;
+    color: $colorWhite;
+    border-color: $colorBlack;
+}

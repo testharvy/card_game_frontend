@@ -1,0 +1,40 @@
+@import "@/shared/SCSSVariables";
+
+.header{
+  display: flex;
+  justify-content: space-between;
+}
+
+.cards{
+  width: calc(100% - 40px);
+  padding: 20px;
+  border: 1px solid $colorBlack;
+  border-radius: 20px;
+  color: $colorBlack;
+  transition: background 0.3s ease, border 0.3s ease;
+}
+.h1{
+  color: $colorWhite;
+  transition: color 0.3s ease;
+}
+
+@media screen and (max-width: $mobileWidth){
+  .cards{
+    width: calc(100% - 20px);
+    padding: 10px;
+    border-radius: 10px;
+  }
+  .h1{
+    font-size: 20px;
+  }
+}
+
+
+/* theme */
+.cards.lightTheme{
+  border: 1px solid $colorBlack;
+  color: $colorBlack;
+  .h1{
+    color: $colorBlack;
+  }
+}

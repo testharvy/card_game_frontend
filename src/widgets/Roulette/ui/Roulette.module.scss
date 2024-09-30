@@ -1,0 +1,147 @@
+@import "@/shared/SCSSVariables";
+
+.container{
+    border-radius: 5px;
+    border: 1px solid $colorBlack;
+    display: grid;
+    grid-template-columns: 550px auto;
+    padding: 20px;
+}
+.title{
+    display: block;
+}
+
+.wheelWrapper{
+    display: block;
+    position: relative;
+    border-radius: 5px;
+    padding-top: 25px;
+}
+.arrow{
+    width: 30px;
+    height: 30px;
+    border: solid $cardRed;
+    border-width: 0 5px 5px 0;
+    box-sizing: border-box;
+    position: absolute;
+    left: 250px;
+    top: 20px;
+    z-index: 10;
+    transform: rotate(45deg);
+    box-shadow: 5px 5px 5px rgba(0,0,0,0.2);
+}
+.wheel{
+    border-radius: 50%;
+    width: 500px;
+    height: 500px;
+    border: 10px solid $colorWhite;
+    /*box-sizing: border-box;*/
+    background-color: $colorWhite;
+    position: relative;
+    overflow: hidden;
+    transform: rotate(0deg);
+
+}
+
+.wheel:before{
+    content: '';
+    width: 100px;
+    height: 100px;
+    background: $colorDarkSilver;
+    border: 10px solid $colorWhite;
+    box-sizing: border-box;
+    border-radius: 50%;
+    position: absolute;
+    left: calc(50% - 50px);
+    top: calc(50% - 50px);
+    z-index: 10;
+}
+.transition{
+    transition: transform 2s ease-in-out;
+}
+.item{
+    height: 50%;
+    width: 500px;
+    position: absolute;
+    clip-path: polygon(80% 0 , 50% 100%, 20% 0);
+    transform: translateX(-50%);
+    transform-origin: bottom;
+    text-align: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: $colorWhite;
+}
+.item:nth-child(1){
+    background: $cardGreen;
+    transform: rotate(0deg);
+}
+.item:nth-child(2){
+    background: $cardRed;
+    transform: rotate(-60deg);
+}
+.item:nth-child(3){
+    background: $cardBlue;
+    transform: rotate(-120deg);
+}
+.item:nth-child(4){
+    background: $cardGreen;
+    transform: rotate(-180deg);
+}
+.item:nth-child(5){
+    background: $cardRed;
+    transform: rotate(-240deg);
+}
+.item:nth-child(6){
+    background: $cardBlue;
+    transform: rotate(-300deg);
+}
+
+.left{
+    width: 550px;
+}
+.right{
+    padding-top: 34px;
+}
+.button{
+    display: block;
+}
+.result{
+    padding-top: 20px;
+    display: block;
+}
+.deck{
+    display: flex;
+    flex-flow: row wrap;
+    align-content: space-between;
+    justify-content: flex-start;
+    width: 100%;
+    padding: 0;
+}
+
+@media screen and (max-width: $mobileWidth){
+    .title{
+        font-size: 20px;
+    }
+    .container{
+        display: block;
+    }
+    .left{
+        width: 100%;
+    }
+    .wheel{
+        width: 200px;
+        height: 200px;
+    }
+    .item{
+        width: 200px;
+        color: transparent;
+    }
+    .arrow{
+        width: 30px;
+        height: 30px;
+        left: 95px;
+        top: 10px;
+    }
+
+}
