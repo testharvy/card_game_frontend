@@ -1,6 +1,31 @@
+@import "@/shared/SCSSVariables";
+
+.form{
+    display: block;
+    width: 300px;
+}
+.input{
+    display: block;
+    width: 100%;
+    margin: 10px 0;
+    padding: 10px;
+    border-radius: 5px;
+    outline: none;
+    border: 1px solid $colorBlack;
+}
+
+.input.error{
+    border-color: $colorRed;
+}
+
 .testUser{
     display: inline-block;
     vertical-align: top;
-    border: 1px solid black;
-    padding: 10px;
+    border: 1px solid $colorBlack;
+    padding: 15px;
+    margin-right: 5px;
+    border-radius: 5px;
+}
+.testUserField{
+    margin: 5px 0;
 }

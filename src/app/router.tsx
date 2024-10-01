@@ -8,7 +8,6 @@ import { IndexPage } from "@/pages/index";
 import { RulesPage } from "@/pages/rules";
 import { RoulettePage } from "@/pages/roulette";
 import { LoginPage } from "@/pages/login";
-import { LoginAction } from "@/features/login"
 import { LogoutLoader } from "@/features/logout";
 
 
@@ -42,7 +41,6 @@ export const router = createBrowserRouter([
                     {
                         path: "login",
                         element: <LoginPage />,
-                        action: LoginAction,
                     },
                     {
                         path: "logout",
