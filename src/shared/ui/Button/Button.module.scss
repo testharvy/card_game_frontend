@@ -39,11 +39,11 @@
 
 .button.lightTheme{
     background: $colorWhite;
-    border: 1px solid $colorBlueHover;
+    border: 1px solid $colorBlack;
     color: $colorBlack;
 }
 .button.lightTheme:hover{
     background: $colorBlueHover;
     color: $colorWhite;
-    border-color: $colorBlack;
+    border-color: $colorDarkBlue;
 }

@@ -33,7 +33,12 @@ export interface fetchTokenData{
     token: string;
 }
 
-export function fetchToken(formData:FormData) {
+export interface loginData{
+    username: string;
+    password: string;
+}
+
+export function fetchToken(formData:loginData) {
     return async (dispatch:AppDispatch) => {
         try {
             dispatch(setUserFetchingStatus(false));
