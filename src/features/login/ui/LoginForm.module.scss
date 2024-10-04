@@ -4,20 +4,6 @@
     display: block;
     width: 300px;
 }
-.input{
-    display: block;
-    width: 100%;
-    margin: 10px 0;
-    padding: 10px;
-    border-radius: 5px;
-    outline: none;
-    border: 1px solid $colorBlack;
-}
-
-.input.error{
-    border-color: $colorRed;
-}
-
 .testUser{
     display: inline-block;
     vertical-align: top;

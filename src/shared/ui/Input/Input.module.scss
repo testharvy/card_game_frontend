@@ -1,0 +1,33 @@
+@import "@/shared/SCSSVariables";
+
+
+.error{
+  position: absolute;
+  top: 10px;
+  right: 5px;
+  bottom: 10px;
+  z-index: 2;
+  color: $colorRed;
+  pointer-events: none;
+  font-size: 12px;
+  line-height: 16px;
+}
+.inputWrapper{
+  position: relative;
+  width: 100%;
+  margin: 10px 0;
+}
+.input{
+  display: block;
+  width: 100%;
+  padding: 10px;
+  border-radius: 5px;
+  font-size: 16px;
+  outline: none;
+  box-sizing: border-box;
+  border: 1px solid $colorBlueHover;
+}
+
+.input.lightTheme{
+  border: 1px solid $colorBlack;
+}

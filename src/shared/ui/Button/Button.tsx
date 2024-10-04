@@ -6,14 +6,19 @@ interface Props{
     onClick?: React.MouseEventHandler<HTMLButtonElement>,
     children?: ReactNode,
     buttonClass?: 'default'|'width100',
+    disabled?: boolean,
 }
 //
-export function Button({onClick, children, buttonClass='default'}:Props ){
+export function Button({onClick, children, buttonClass='default', disabled=false}:Props ){
     const {theme} = useContext(ThemeContext);
 
     return(
         <div className={`${styles.wrapper} ${styles[buttonClass]}`}>
-            <button className={`${styles.button} ${styles[theme]}`} onClick={onClick}>{children}</button>
+            <button
+                className={`${styles.button} ${styles[theme]} ${disabled ? styles.disabled : ''}`}
+                onClick={onClick}
+                disabled={disabled}
+            >{children}</button>
         </div>
 
     )

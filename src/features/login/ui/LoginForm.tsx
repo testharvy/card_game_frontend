@@ -1,16 +1,14 @@
-import {SubmitHandler, useForm} from "react-hook-form";
+import {SubmitHandler, useForm, Controller} from "react-hook-form";
 import styles from './LoginForm.module.scss'
 import TestUser from "./TestUser.tsx";
 import {LoginAction} from "@/features/login";
 import {loginData} from "@/entities/user";
-import {Button} from "@/shared/ui";
+import {Button, Input} from "@/shared/ui";
 import {useNavigate} from "react-router-dom";
 
 
-
-
 export function LoginForm(){
-    const {register, handleSubmit, reset, clearErrors, formState: { errors }} = useForm<loginData>({
+    const {control, handleSubmit, reset, formState: { errors, isValid }} = useForm<loginData>({
         mode: "onSubmit"
     });
     const navigateTo  = useNavigate();
@@ -34,21 +32,28 @@ export function LoginForm(){
                 onSubmit={handleSubmit(submit)}
             >
                 <h1>Вход</h1>
-                <input
-                    type="text"
-                    placeholder="Имя"
-                    className={`${styles.input} ${errors.username? styles.error: ''}`}
-                    onClick={()=>clearErrors("username")}
-                    {...register("username", { required: true})}
+                <Controller
+                    name="username"
+                    control={control}
+                    rules={{ required: 'Обязательное поле' }}
+                    render={({ field:{value, onChange} }) => <Input
+                        value={value}
+                        onChange={onChange}
+                        type={'text'} placeholder={'Имя:'}
+                        error={errors.username?.message}/>}
                 />
-                <input
-                    type="text"
-                    placeholder="Пароль:"
-                    className={`${styles.input} ${errors.password? styles.error: ''}`}
-                    onClick={()=>clearErrors("password")}
-                    {...register("password", { required: true})}
+                <Controller
+                    name="password"
+                    control={control}
+                    rules={{ required: 'Обязательное поле'}}
+                    render={({ field:{value, onChange} }) => <Input
+                        value={value}
+                        onChange={onChange}
+                        type={'password'}
+                        placeholder={'Пароль:'}
+                        error={errors.password?.message}/>}
                 />
-                <Button>Войти</Button>
+                <Button  disabled={!isValid}>Войти</Button>
             </form>
             <br/><br/>
             <div>

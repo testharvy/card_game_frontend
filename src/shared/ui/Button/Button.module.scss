@@ -31,6 +31,14 @@
 }
 
 
+.button.disabled,
+.button:hover.disabled{
+    cursor: default;
+    border-color: $colorDarkSilver;
+    background-color: $colorSilver;
+    color: $colorBlack
+}
+
 @media screen and (max-width: $mobileWidth){
     .button{
         padding: 5px;
@@ -46,4 +54,11 @@
     background: $colorBlueHover;
     color: $colorWhite;
     border-color: $colorDarkBlue;
+}
+
+.button.lightTheme.disabled,
+.button.lightTheme:hover.disabled{
+    border-color: $colorBlack;
+    background-color: $colorSilver;
+    color: $colorBlack;
 }
